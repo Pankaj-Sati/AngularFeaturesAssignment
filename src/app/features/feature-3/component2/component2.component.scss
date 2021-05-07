@@ -1,0 +1,30 @@
+/*Container*/
+.container
+{
+    margin: 10px;
+}
+
+/*Timer Actions*/
+#timerInputs>*{
+
+    padding:5px;
+}
+
+#timerInputs
+{
+    .actionButtons{
+        button{
+            padding: 5px 15px;
+            margin-right: 10px;;
+        }    
+    }
+}
+
+/*Timer logs*/
+#timerLogs{
+    p
+    {
+        margin:5px 0px;
+        font-size: var(--text_sm);
+    }
+}

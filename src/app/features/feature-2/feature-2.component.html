@@ -1,0 +1,18 @@
+<section name="Filters" class="filtersContainer">
+    <div class="viewButtons">
+        <button (click)="gridView=true" [class.selected]="gridView">Grid</button>
+        <button (click)="gridView=false" [class.selected]="!gridView">List</button>
+    </div>
+    <select (change)="priceFilterChanged($event)">
+      <option value="" disabled selected>Select Filter</option>
+      <option value="lTh">Price Low to High</option>
+      <option value="hTl">Price High to Low</option>
+    </select>
+</section>
+<section class="productsContainer" [class.useGrid]="gridView">
+  <div class="productsCard" *ngFor="let item of products">
+        <strong>{{item.name}}</strong><br>
+        <p>{{item.price| currency:'INR'}}</p>
+  </div>  
+  
+</section>

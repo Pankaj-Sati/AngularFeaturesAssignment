@@ -1,0 +1,27 @@
+/*Nav Bar*/
+nav
+{
+    font-size: var(--text-md);
+    background-color: black;
+    color:white;
+
+    ul
+    {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        li
+        {
+            padding: 10px;
+        }
+    }
+}
+
+/*Content Container*/
+.container
+{
+    max-width: 1200px;
+    margin: auto;
+}

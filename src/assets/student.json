@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "name": "Student 1",
+            "class": 2,
+            "section": "A",
+            "sub1": 4,
+            "sub2": 98,
+            "sub3": 82
+        },
+        {
+            "name": "Student 2",
+            "class": 3,
+            "section": "B",
+            "sub1": 64,
+            "sub2": 24,
+            "sub3": 47
+        },
+        {
+            "name": "Student 3",
+            "class": 4,
+            "section": "C",
+            "sub1": 61,
+            "sub2": 77,
+            "sub3": 20
+        },
+        {
+            "name": "Student 4",
+            "class": 5,
+            "section": "A",
+            "sub1": 49,
+            "sub2": 1,
+            "sub3": 61
+        },
+        {
+            "name": "Student 5",
+            "class": 2,
+            "section": "B",
+            "sub1": 55,
+            "sub2": 58,
+            "sub3": 34
+        },
+        {
+            "name": "Student 6",
+            "class": 3,
+            "section": "C",
+            "sub1": 51,
+            "sub2": 59,
+            "sub3": 26
+        },
+        {
+            "name": "Student 7",
+            "class": 4,
+            "section": "A",
+            "sub1": 90,
+            "sub2": 38,
+            "sub3": 21
+        },
+        {
+            "name": "Student 8",
+            "class": 5,
+            "section": "B",
+            "sub1": 13,
+            "sub2": 93,
+            "sub3": 58
+        },
+        {
+            "name": "Student 9",
+            "class": 2,
+            "section": "C",
+            "sub1": 61,
+            "sub2": 25,
+            "sub3": 99
+        },
+        {
+            "name": "Student 10",
+            "class": 3,
+            "section": "A",
+            "sub1": 33,
+            "sub2": 19,
+            "sub3": 63
+        }
+    ]
+}

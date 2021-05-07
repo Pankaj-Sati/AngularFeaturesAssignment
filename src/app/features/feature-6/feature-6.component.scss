@@ -1,0 +1,26 @@
+
+/*Products Container*/
+.productsContainer
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-items: center;
+}
+
+/*Product card*/
+.productsCard
+{
+    width:200px;
+    height:200px;
+    border:1px solid black;
+    box-shadow: 0px 5px 5px #0000006b;
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

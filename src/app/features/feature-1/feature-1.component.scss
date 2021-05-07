@@ -1,0 +1,35 @@
+.container{
+    margin:10px 0px;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+
+}
+
+div
+{
+    margin: auto;
+    width:90%;
+    height:90%;
+    border: 5px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#floatingBanner
+{
+    animation-name: divRotation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes divRotation {
+    0%{
+        transform: rotateY(0deg);
+    }
+
+    100%{
+        transform: rotateY(360deg);
+    }
+}

@@ -1,0 +1,16 @@
+<div class="container">
+    <div id="timerInputs">
+        <h5>Enter Timer Limit</h5>
+        <input type="number" pattern="^[0-9]+$" [(ngModel)]="inputTime">
+        <div class="actionButtons" #actionButtons>
+            <button  id="startButton" *ngIf="!isStarted;else pauseButton">Start</button>
+            <ng-template #pauseButton>
+                <button  id="pauseButton">{{isRunning?'Pause':'Resume'}}</button>
+            </ng-template>
+            <button  id="resetButton">Reset</button>
+        </div>
+    </div>
+    <div id="timerLogs">
+        <p *ngFor="let log of logs">{{log.message}}</p>
+    </div>
+</div>

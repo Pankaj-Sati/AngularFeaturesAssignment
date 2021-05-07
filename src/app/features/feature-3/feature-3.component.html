@@ -1,0 +1,8 @@
+<p *ngIf="errorMessage">{{errorMessage}}</p>
+
+<div class="componentsContainer">
+  <app-component1 [remainingTime]="remainingTime"></app-component1>
+  <app-component2 (newEvent)="timerEvent($event)" [timerValue]="remainingTime" [currentState]="currentState"></app-component2>
+  <app-component3></app-component3>
+  <app-component4></app-component4>
+</div>

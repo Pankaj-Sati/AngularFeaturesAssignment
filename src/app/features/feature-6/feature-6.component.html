@@ -1,0 +1,6 @@
+<section class="productsContainer" #container>
+  <div class="productsCard" *ngFor="let item of products">
+        <button (click)="buttonClick(item)">{{item.name}}</button>
+  </div>  
+  
+</section>

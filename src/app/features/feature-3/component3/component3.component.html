@@ -1,0 +1,6 @@
+<div class="container">
+    <ng-container *ngIf="timerLogs && timerLogs.length>0">
+        <p *ngFor="let log of timerLogs">{{log.message}}</p>
+    </ng-container>
+  
+</div>
