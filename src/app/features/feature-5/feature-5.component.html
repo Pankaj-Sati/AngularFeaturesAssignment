@@ -1,1 +1,12 @@
-<strong>Feature 5 works</strong>
+<div class="container">
+    <table *ngIf="students && students.length>0">
+        <thead>
+            <th *ngFor="let key of getkeysIn(students[0]) " (click)='sortHeading(key)'>{{key | upprCase}} {{getSortOrder(key)}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of students">
+                <td *ngFor="let key of getkeysIn(item)">{{item[key]}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

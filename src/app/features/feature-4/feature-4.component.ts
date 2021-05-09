@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnDestroy, ViewChild } from "@angular/core";
 import { interval, Subscription } from "rxjs";
 import { tap } from "rxjs/operators";
 import { TimerEvent,Events,TimerStates } from "src/app/common/interface";
@@ -13,10 +13,11 @@ import { Feature4Service } from "./feature-4.service";
         styleUrls:['./feature-4.component.scss'],
         templateUrl:'./feature-4.component.html'
     })
-export class Feature4Component
+export class Feature4Component implements OnDestroy
 {
     errorMessage='';
     timer:Subscription;
+    timerSubjectSubscription:Subscription;
     constructor(private timerService:Feature4Service)
     {
 
@@ -24,7 +25,7 @@ export class Feature4Component
 
     ngOnInit()
     {
-        this.timer=this.timerService.timerSubject.pipe(
+        this.timerSubjectSubscription=this.timerService.timerSubject.pipe(
             tap(console.log)
         ).subscribe(event=>
             {
@@ -74,6 +75,16 @@ export class Feature4Component
             this.timer.unsubscribe();
         }
         this.timer=null;
+    }
+
+    ngOnDestroy()
+    {
+        if(this.timer)
+        {
+            this.timer.unsubscribe();
+        }
+        this.timerSubjectSubscription.unsubscribe();
+        this.timerService.reset();
     }
 
 }

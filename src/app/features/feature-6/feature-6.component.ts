@@ -1,5 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
-import { fromEvent } from "rxjs";
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { fromEvent, Subscription } from "rxjs";
 import { debounceTime, exhaustMap, throttleTime } from "rxjs/operators";
 
 @Component(
@@ -8,11 +8,12 @@ import { debounceTime, exhaustMap, throttleTime } from "rxjs/operators";
         styleUrls:['./feature-6.component.scss'],
         templateUrl:'./feature-6.component.html'
     })
-export class Feature6Component implements OnInit
+export class Feature6Component implements OnInit,OnDestroy
 {
     gridView=true; //To swithc between grid and list view
     products:Array<{name:string}>=[];
 
+    scrollListner:Subscription;
     @ViewChild('container',{static:true}) containerDivRef:ElementRef;
 
     constructor()
@@ -25,7 +26,7 @@ export class Feature6Component implements OnInit
 
     ngOnInit()
     {
-        fromEvent(document,'scroll').pipe(
+        this.scrollListner=fromEvent(document,'scroll').pipe(
             debounceTime(100)
         )
         .subscribe((event:any)=>
@@ -53,6 +54,11 @@ export class Feature6Component implements OnInit
     buttonClick(product)
     {
         alert(`${product.name} clicked`);
+    }
+
+    ngOnDestroy()
+    {
+        this.scrollListner.unsubscribe();
     }
 
 }

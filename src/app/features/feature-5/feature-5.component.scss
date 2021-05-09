@@ -1,0 +1,21 @@
+/*Container*/
+.container
+{
+    table
+    {
+        width:100%;
+        th,td{
+            text-align: center;
+            padding: 5px;
+        }
+
+        th{
+            cursor: pointer;
+        }
+
+        tr:nth-child(odd)
+        {
+            background: rgba(rgb(122, 122, 226),20%);
+        }
+    }
+}

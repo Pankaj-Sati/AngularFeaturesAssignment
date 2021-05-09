@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, OnDestroy, ViewChild } from "@angular/core";
 import { interval, Subscription } from "rxjs";
 import { Events, TimerEvent,TimerStates } from "src/app/common/interface";
 import { Component3Component } from "./component3/component3.component";
@@ -10,7 +10,7 @@ import { Component4Component } from "./component4/component4.component";
         styleUrls:['./feature-3.component.scss'],
         templateUrl:'./feature-3.component.html'
     })
-export class Feature3Component
+export class Feature3Component implements OnDestroy
 {
     remainingTime:number=0; //Time remaining
     errorMessage='';
@@ -110,6 +110,14 @@ export class Feature3Component
             this.timer=null;
             this.currentState=TimerStates.PAUSED;
         }
+    }
+
+    ngOnDestroy()
+    {
+        if(this.timer)
+            {
+                this.timer.unsubscribe();
+            }
     }
     
 

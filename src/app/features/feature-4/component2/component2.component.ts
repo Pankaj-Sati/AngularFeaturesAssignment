@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, exhaustMap, map, tap, throttleTime } from 'rxjs/operators';
 import { TimerEvent,Events,TimerStates } from "src/app/common/interface";
@@ -96,6 +96,7 @@ export class Component2Component implements OnInit {
      this.timerLogs=this.timerLogs.slice(-3); //last 3 logs
      return this.timerLogs;
   }
+
 
 }
 

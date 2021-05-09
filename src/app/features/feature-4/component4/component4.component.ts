@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Events } from 'src/app/common/interface';
 import { Feature4Service } from '../feature-4.service';
 
@@ -7,10 +8,11 @@ import { Feature4Service } from '../feature-4.service';
   templateUrl: './component4.component.html',
   styleUrls: ['./component4.component.scss']
 })
-export class Component4Component implements OnInit {
+export class Component4Component implements OnInit,OnDestroy {
 
   startButtonClicks:number=0;
   pauseButtonClicks:number=0;
+  private timerSubscription:Subscription;
   constructor(private timerService:Feature4Service)
   {
 
@@ -18,7 +20,7 @@ export class Component4Component implements OnInit {
 
   ngOnInit()
   {
-      this.timerService.timerSubject.pipe(
+     this.timerSubscription= this.timerService.timerSubject.pipe(
       ).subscribe(event=>
           {
               switch(event.event)
@@ -36,6 +38,11 @@ export class Component4Component implements OnInit {
                       break;
               }
           })
+  }
+
+  ngOnDestroy()
+  {
+      this.timerSubscription.unsubscribe();
   }
 
 }

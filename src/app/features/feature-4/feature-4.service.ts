@@ -71,5 +71,11 @@ export class Feature4Service
         this.currentState=TimerStates.PAUSED;
         this.timerSubject.next({event:Events.PAUSE});  
     }
+
+    reset()
+    {
+        this.currentState=TimerStates.RESET;
+        this.remainingTime=0;
+    }
     
 }
