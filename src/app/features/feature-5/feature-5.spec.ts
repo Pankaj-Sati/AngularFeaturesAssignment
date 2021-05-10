@@ -5,7 +5,7 @@ import { Feature5Module } from "./feature-5.module";
 import { Store } from "@ngrx/store";
 import { Student } from "src/app/common/interface";
 
-fdescribe('Feature 5',()=>
+describe('Feature 5',()=>
 {
     let component:Feature5Component=null;
     let componentFixture:ComponentFixture<Feature5Component>=null;
