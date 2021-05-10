@@ -44,7 +44,7 @@ export class Feature6Component implements OnInit,OnDestroy
                     //User has scrolled to last div
                     for(let i=1;i<=5;i++)
                     {
-                        this.products.push({name:`Button ${this.products.length+i}`});
+                        this.products.push({name:`Button ${this.products.length+1}`});
                     }
                 }
         
