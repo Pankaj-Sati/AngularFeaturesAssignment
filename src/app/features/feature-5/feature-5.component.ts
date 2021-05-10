@@ -27,6 +27,7 @@ export class Feature5Component implements OnInit
     }
     ngOnInit() 
     {
+        console.log('In ngOnInit()');
       this.getStudents();
       
       this.store.select('studentList').pipe(

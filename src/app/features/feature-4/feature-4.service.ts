@@ -61,8 +61,10 @@ export class Feature4Service
         }
         else
         {
-            this.timerSubject.next({event:Events.START,payload:this.remainingTime});
+            
             this.currentState=TimerStates.RUNNING;
+            this.timerSubject.next({event:Events.START,payload:this.remainingTime});
+           
         }
     }
 
@@ -76,6 +78,19 @@ export class Feature4Service
     {
         this.currentState=TimerStates.RESET;
         this.remainingTime=0;
+    }
+
+    timerTickEvent()
+    {
+        this.remainingTime--;
+            if(this.remainingTime>0)
+            {
+                this.timerTickSubject.next(this.remainingTime);
+            }
+            else
+            {
+                this.resetTimer();
+            }
     }
     
 }

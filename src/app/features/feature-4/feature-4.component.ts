@@ -55,15 +55,7 @@ export class Feature4Component implements OnDestroy
         this.timerService.timerTickSubject.next(this.timerService.remainingTime);
         this.timer=interval(1000).subscribe(()=>
         {
-            this.timerService.remainingTime--;
-            if(this.timerService.remainingTime>0)
-            {
-                this.timerService.timerTickSubject.next(this.timerService.remainingTime);
-            }
-            else
-            {
-                this.timerService.resetTimer();
-            }
+            this.timerService.timerTickEvent();
            
         });
     }
